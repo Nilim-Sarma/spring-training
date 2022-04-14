@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean class="com.te.springcore.bean.Engine" id="engine2" >
+		<property name="engineCc" value="1000" />
+		<property name="fuelType" value="petrol" />
+	</bean>
+
+	<bean class="com.te.springcore.bean.Engine" id="engine1" autowire-candidate="false">
+		<property name="engineCc" value="1300" />
+		<property name="fuelType" value="diesel" />
+	</bean>
+
+	<bean class="com.te.springcore.bean.Car" id="car"
+		autowire="constructor">
+		<constructor-arg value="KA-01-1345" />
+		<constructor-arg value="Polo" />
+	</bean>
+
+
+
+</beans>
